@@ -1,0 +1,17 @@
+{
+    "name": "blockchain_project",
+    "version": "1.0.0",
+    "description": "To run a deterministic wallet:",
+    "main": "contract.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ravina-mestry/blockchain_project"
+    },
+    "homepage": "https://github.com/ravina-mestry/blockchain_project#README.md",
+    "dependencies": {
+        "bip39": "^3.0.4",
+        "ethereumjs-wallet": "^1.0.2",
+        "keccak256": "^1.0.6",
+        "web3": "^1.7.3"
+    }
+}
