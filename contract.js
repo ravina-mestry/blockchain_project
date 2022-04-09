@@ -338,12 +338,18 @@ const getTotalSupply = async() => {
     console.log(`totalsupply is ${totalsupply}`);
     return totalsupply;
 }
+const getBalance = async(address) => {
+    let balance = await contract.methods.balanceOf(address).call();
+    console.log(`balance of ${address} address is ${balance}`);
+    return balance;
+}
 
 const getAllContractInfo = async() => {
       getName();
       getSymbol();
       getDecimals();
       getTotalSupply();
+      getBalance(ownerAddress);
      }
 
 getAllContractInfo()
