@@ -343,6 +343,14 @@ const getBalance = async(address) => {
     console.log(`balance of ${address} address is ${balance}`);
     return balance;
 }
+const transferToken = async(fromAddress, toAddress, amount) => {
+    // to create an Eth transaction
+    // we need a private key to sign the tx
+    // we also need a nonce (counter) to prevent tx replays
+
+    const nonce = await web3.eth.getTransactionCount(fromAddress);
+    console.log(`nonce of ${nonce} for address ${fromAddress}`)
+}
 
 const getAllContractInfo = async() => {
       getName();
@@ -350,6 +358,7 @@ const getAllContractInfo = async() => {
       getDecimals();
       getTotalSupply();
       getBalance(ownerAddress);
+      transferToken(ownerAddress, '0x5ef5090b5701CE6E36939eddE4bD4D30966f2604', 23000);
      }
 
 getAllContractInfo()
