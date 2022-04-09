@@ -383,3 +383,5 @@ const getAllContractInfo = async() => {
      }
 
 getAllContractInfo()
+
+module.exports = {getName, getSymbol, getBalance, getDecimals, getTotalSupply, transferToken}
