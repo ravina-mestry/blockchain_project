@@ -322,4 +322,22 @@ const getName = async() => {
     console.log(`name is ${name}`);
     return name;
 }
-getName();
+const getSymbol = async() => {
+    let symbol = await contract.methods.symbol().call();
+    console.log(`symbol is ${symbol}`);
+    return symbol;
+}
+
+const getDecimals = async() => {
+    let decimals = await contract.methods.decimals().call();
+    console.log(`decimals is ${decimals}`);
+    return decimals;
+}
+
+const getAllContractInfo = async() => {
+      getName();
+      getSymbol();
+      getDecimals();
+     }
+     
+getAllContractInfo()
