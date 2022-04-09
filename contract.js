@@ -16,12 +16,14 @@ console.log("this is the contract.js file");
 // creating a transaction
 
 const Web3 = require("web3");
+const Tx = require("ethereumjs-tx").Transaction;-
 
 require('dotenv').config();
 
 infuraToken = process.env.INFURA_TOKEN;
 contractAddress = process.env.CONTRACT_ADDRESS;
 ownerAddress = process.env.OWNER_ADDRESS;
+privateKey = Buffer.from(process.env.SUPER_SECRET_PRIVATE_KEY, 'hex');
 
 //console.log(`infura token loaded: ${infuraToken}`);
 
@@ -350,8 +352,27 @@ const transferToken = async(fromAddress, toAddress, amount) => {
 
     const nonce = await web3.eth.getTransactionCount(fromAddress);
     console.log(`nonce of ${nonce} for address ${fromAddress}`)
-}
 
+    const txObject = {
+        nonce: web3.utils.toHex(nonce),
+        gasLimit: web3.utils.toHex(500000),
+        gasPrice: web3.utils.toHex(web3.utils.toWei('100', 'gwei')),
+        to: contractAddress,
+        data: contract.methods.transfer(toAddress, amount).encodeABI()
+    }
+    const tx = new Tx(txObject, {chain: 'ropsten', hardfork: 'petersburg'});
+
+    tx.sign(privateKey);
+
+    const serializedTx = tx.serialize();
+    const raw = '0x' + serializedTx.toString('hex');
+
+    console.log("about to send tx");
+    let txResponse = await web3.eth.sendSignedTransaction(raw);
+
+    console.log(`tx sent. block number is ${txResponse.blockNumber}`);
+    console.log(`tx sent. tx hash is ${txResponse.transactionHash}`);   
+}
 const getAllContractInfo = async() => {
       getName();
       getSymbol();
