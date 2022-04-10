@@ -5,7 +5,16 @@
 // collect tea and medals
 
 let fs = require("fs");
+let contract = require("./contract.js");
 
-let distributionAddresses = fs.readFileSync("./accounts.txt", "utf8").split(",");
+const doDistro = async() => {
 
-console.log(`number of distribution addresses are ${distributionAddresses.length}`);
+    let distributionAddresses = fs.readFileSync("./accounts.txt", "utf8").split(",");
+
+    console.log(`number of distribution addresses are ${distributionAddresses.length}`);
+
+    let symbol = await contract.getSymbol();
+    console.log(`token symbol is ${symbol}`);
+}
+
+doDistro();
