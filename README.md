@@ -1,7 +1,7 @@
 # blockchain_project
 This is the readme file.
 
-1. Created Openzep_erc20.sol file and 
+1. Created Openzep_erc20.sol file
     Copied the Openzep_erc20 contract from https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol
     Inserted 'Import "./IERC20.sol";'
     Inserted 'import "./extensions/IERC20Metadata.sol";'
@@ -38,3 +38,13 @@ This is the readme file.
     ```npm install fs```
     ```npm install big-number```
     $node distribute.js
+
+8. Running Docker container
+    Built the docker image
+    ```docker build -t nci/erc20 .```
+    Checked images running
+    ``` $docker image ls ```
+    Built an image
+    ```$ docker build -t nci/erc20 .```
+    checked what docker containers are running
+    ```$docker ps```
