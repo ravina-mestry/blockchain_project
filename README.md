@@ -8,17 +8,33 @@ This is the readme file.
     Inserted 'import "../../utils/Context.sol";'
     Deployed the ERC20 contract with 1 million tokens with Name 'TOKEN MCTOKEN FACE RVProject-v1.0' and symbol 'TMTFRVPRJ'
     Compiled the code in remix and deployed it to Ropsten test network.
+    Verified the source code.
 
-2. Updated .env file with Infura token, contract address, owner address and spuer secret private key
+2. Updated .env file with Infura token, contract address, owner address and spuer secret private key.
 
 3. Created wallet.js to get wallet details, installed the package and ran using below command.
-    npm install ethereumjs-wallet
-    npm install bip39
-    npm install keccak256
-    '$node wallet.js'
+    ```npm install ethereumjs-wallet```
+    ```npm install bip39```
+   ``` npm install keccak256```
+    $node wallet.js
 
 4. Created package.json to remember the deps.
 
-5. Created contract.js 
-    npm install web3
-    npm install dotenv
+5. Created contract.js to interaction with our smart contract and to read values from it, also created transactions to write to it.
+    ```npm install web3```
+    ```npm install dotenv```
+    ```npm install ethereumjs-tx```
+    $node contract.js
+
+6. Created accounts.js to list number for address.
+
+7. Created distribute.js to perform below:
+    read in a file of accounts
+    count the number of accounts
+    get the remaining supply belonging to token owner
+    divide 5% of remaining supply between the accounts
+    collect tea and medals
+
+    ```npm install fs```
+    ```npm install big-number```
+    $node distribute.js
