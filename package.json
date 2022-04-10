@@ -9,8 +9,12 @@
     },
     "homepage": "https://github.com/ravina-mestry/blockchain_project#README.md",
     "dependencies": {
+        "big-number": "^2.0.0",
         "bip39": "^3.0.4",
+        "dotenv": "^16.0.0",
+        "ethereumjs-tx": "^2.1.2",
         "ethereumjs-wallet": "^1.0.2",
+        "fs": "^0.0.1-security",
         "keccak256": "^1.0.6",
         "web3": "^1.7.3"
     }
