@@ -41,10 +41,15 @@ This is the readme file.
 
 8. Running Docker container
     Built the docker image
-    ```docker build -t nci/erc20 .```
+    ```docker build -t blockchain-projects .```
     Checked images running
     ``` $docker image ls ```
-    Built an image
-    ```$ docker build -t nci/erc20 .```
+    Tagged the image
+    ```docker tag blockchain-projects:latest devsecopstutorials/blockchain-projects:latest```
+    Push an image
+    ```$ docker push devsecopstutorials/blockchain-projects:latest```
     checked what docker containers are running
     ```$docker ps```
+
+9. Created docker-compose.yml file
+    ```docker-compose up```
