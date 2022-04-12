@@ -10,7 +10,7 @@ This is the readme file.
     Compiled the code in remix and deployed it to Ropsten test network.
     Verified the source code.
 
-2. Updated .env file with Infura token, contract address, owner address and spuer secret private key.
+2. Updated .env file with Infura token, contract address, owner address and super secret private key.
 
 3. Created wallet.js to get wallet details, installed the package and ran using below command.
     ```npm install ethereumjs-wallet```
@@ -53,3 +53,9 @@ This is the readme file.
 
 9. Created docker-compose.yml file
     ```docker-compose up```
+    To remove all docker images/networks
+    ```docker system prune -a -f``
+
+10. Renamed the Docker Hub image to 'blockchain-projects:x21120501_ravina_mestry_blockchain_project'
+    ```docker tag blockchain-projects:latest devsecopstutorials/blockchain-projects:x21120501_ravina_mestry_blockchain_project```
+    ```docker push devsecopstutorials/blockchain-projects:x21120501_ravina_mestry_blockchain_project```
