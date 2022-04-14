@@ -13,6 +13,7 @@ This is the readme file.
 2. Updated .env file with Infura token, contract address, owner address and super secret private key.
 
 3. Created wallet.js to get wallet details, installed the package and ran using below command.
+
     ```npm install ethereumjs-wallet```
 
     ```npm install bip39```
@@ -24,6 +25,7 @@ This is the readme file.
 4. Created package.json to remember the deps.
 
 5. Created contract.js to interaction with our smart contract and to read values from it, also created transactions to write to it.
+
     ```npm install web3```
 
     ```npm install dotenv```
@@ -49,27 +51,30 @@ This is the readme file.
 
 8. Running Docker container
     Built the docker image
+
     ```docker build -t blockchain-projects .```
 
     Checked images running
-    ``` $docker image ls ```
+    ```docker image ls ```
 
     Tagged the image
     ```docker tag blockchain-projects:latest devsecopstutorials/blockchain-projects:latest```
 
     Push an image
-    ```$ docker push devsecopstutorials/blockchain-projects:latest```
+    ```docker push devsecopstutorials/blockchain-projects:latest```
 
     checked what docker containers are running
-    ```$docker ps```
+    ```docker ps```
 
 9. Created docker-compose.yml file and ran using
+
     ```docker-compose up```
 
     To remove all docker images/networks
     ```docker system prune -a -f``
 
 10. Renamed the Docker Hub image to 'blockchain-projects:x21120501_ravina_mestry_blockchain_project'
+
     ```docker tag blockchain-projects:latest devsecopstutorials/blockchain-projects:x21120501_ravina_mestry_blockchain_project```
-    
+
     ```docker push devsecopstutorials/blockchain-projects:x21120501_ravina_mestry_blockchain_project```
